@@ -1,0 +1,227 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>API.teledoc</name>
+    </assembly>
+    <members>
+        <member name="T:API.teledoc.Controllers.ClientsController">
+            <summary>
+            Контроллер для управления клиентами.
+            </summary>
+        </member>
+        <member name="M:API.teledoc.Controllers.ClientsController.#ctor(Business.Interfaces.Services.IClientServiceContainer)">
+            <summary>
+            Конструктор контроллера.
+            </summary>
+            <param name="clientServiceContainer">Контейнер сервисов для работы с клиентами.</param>
+        </member>
+        <member name="M:API.teledoc.Controllers.ClientsController.Create(Domain.ModelsDTO.ClientDto)">
+            <summary>
+            Создание нового клиента.
+            </summary>
+            <remarks>
+            Пример запроса:
+            
+                POST /Clients/Create
+                {
+                   "INN": "1234567890", // длина ровна 10
+                   "Type": "1-2",
+                   "Address": "Москва, 3-я улица Ямского Поля, 2к26",
+                   "Phone": "89645258390", // длина ровна 10
+                   "Status": "1-3",
+                   "Email": "Spektralesandrxd@gmail.com",
+                   "dateAdded": "2024-10-30T13:55:22.909Z", // не учитывается, но есть в dto модели
+                   "dateUpdated": "2024-10-30T13:55:22.909Z" // не учитывается, но есть в dto модели
+                }
+            </remarks>
+            <param name="dto">Объект <c>ClientDto</c> для создания нового клиента. Учитывается ссылочная целостность и валидация.</param>
+        </member>
+        <member name="M:API.teledoc.Controllers.ClientsController.ReadByCondition(Domain.ModelsDTO.ClientDto)">
+            <summary>
+            Чтение клиентов по условию.
+            </summary>
+            <remarks>
+            Примеры запроса:
+            
+                GET /Clients/ReadByCondition?INN=1234567890 // можно искать по любому уникальному полю(номер телефона, инн, почта)
+            </remarks>
+            <param name="dto">Объект <c>ClientDto</c> с условиями для поиска клиентов.</param>
+            <returns>Результат операции.</returns>
+        </member>
+        <member name="M:API.teledoc.Controllers.ClientsController.ReadAll">
+            <summary>
+            Чтение всех клиентов.
+            </summary>
+            <remarks>
+            Пример запроса:
+            
+                GET /Clients/ReadAll
+            </remarks>
+            <returns>Результат операции.</returns>
+        </member>
+        <member name="M:API.teledoc.Controllers.ClientsController.Update(Domain.ModelsDTO.ClientDto)">
+            <summary>
+            Обновить существующего клиента.
+            </summary>
+            <remarks>
+            Пример запроса:
+            
+                PUT /Clients/Update
+                {
+                   "INN": "1234567890", // длина ровна 10
+                   "Type": "1-2",  
+                   "Address": "Москва, 3-я улица Ямского Поля, 2к27",
+                   "Phone": "89645258390",  // длина ровна 10
+                   "Status": "1-3", 
+                   "Email": "UpdatedEmail@gmail.com", 
+                   "dateAdded": "2024-10-30T13:55:22.909Z", // не учитывается, но есть в dto модели
+                   "dateUpdated": "2024-10-30T14:00:00.000Z" // не учитывается, но есть в dto модели
+                }
+            </remarks>
+            <param name="dto">Объект <c>ClientDto</c> для обновления клиента.Учитывается ссылочная целостность и валидация.</param>
+            <returns>Результат операции.</returns>
+        </member>
+        <member name="M:API.teledoc.Controllers.ClientsController.Delete(Domain.ModelsDTO.ClientDto)">
+            <summary>
+            Удалить клиента.
+            </summary>
+            <remarks>
+            Пример запроса:
+            
+                DELETE /Clients/Delete
+                {
+                   "INN": "1234567890"
+                }
+            </remarks>
+            <remarks>
+            Можно использовать любое уникальное поле (номер телефона, инн, почта)
+            </remarks>
+            <param name="dto">Объект <c>ClientDto</c> для удаления клиента.</param>
+            <returns>Результат операции.</returns>
+        </member>
+        <member name="M:API.teledoc.Controllers.ClientsController.DeleteAll">
+            <summary>
+            Удаляет всех клиентов из базы данных.
+            </summary>
+            <remarks>
+            Пример запроса:
+            
+                DELETE /Clients/DeleteAll
+            
+            Удаляет все записи клиентов в базе данных.
+            </remarks>
+            <returns>Результат операции.</returns>
+        </member>
+        <member name="T:API.teledoc.Controllers.FoundersController">
+            <summary>
+            Контроллер для управления учредителями, который предоставляет методы для создания, обновления, чтения и удаления учредителей.
+            </summary>
+        </member>
+        <member name="M:API.teledoc.Controllers.FoundersController.#ctor(Domain.Interfaces.Services.IFounderServiceContainer)">
+            <summary>
+            Конструктор контроллера, который инициализирует контейнер сервисов для работы с учредителями.
+            </summary>
+            <param name="founderServiceContainer">Контейнер сервисов для работы с учредителями, обеспечивающий доступ к необходимым методам.</param>
+        </member>
+        <member name="M:API.teledoc.Controllers.FoundersController.Create(Domain.ModelsDTO.FounderDto)">
+            <summary>
+            Создание нового учредителя.
+            </summary>
+            <remarks>
+            Пример запроса:
+            
+                POST /Founders/Create
+                {
+                    "inn": "1234567890", // длина должна быть ровна 10
+                    "phone": "9645258390", // длина должна быть ровна 10
+                    "lastName": "Alexandr",
+                    "firstName": "Spektor",
+                    "patronymic": "",
+                    "email": "Example@email.com",
+                    "clientINN": "1234567890",
+                    "dateAdded": "2024-10-30T13:55:22.909Z", // не учитывается, но есть в dto модели
+                    "dateUpdated": "2024-10-30T13:55:22.909Z" // не учитывается, но есть в dto модели
+                }
+            </remarks>
+            <param name="founderDto">Объект <c>FounderDto</c>, содержащий данные для создания нового учредителя. Включает поля для идентификации, контактной информации и поле с номером инн клиента.</param>
+            <returns>Возвращает результат операции создания, включая статус и возможные сообщения об ошибках.</returns>
+        </member>
+        <member name="M:API.teledoc.Controllers.FoundersController.Update(Domain.ModelsDTO.FounderDto)">
+            <summary>
+            Обновление существующего учредителя.
+            </summary>
+            <remarks>
+            Пример запроса:
+            
+                PUT /Founders/Update
+                {
+                    "inn": "1234567890", // длина должна быть ровна 10
+                    "phone": "9645258390", // длина должна быть ровна 10
+                    "lastName": "Alexandr",
+                    "firstName": "Spektor",
+                    "patronymic": "",
+                    "email": "UpdatedEmail@email.com",
+                    "clientINN": "1234567890",
+                    "dateAdded": "2024-10-30T13:55:22.909Z", // не учитывается, но есть в dto модели
+                    "dateUpdated": "2024-10-30T14:00:00.000Z" // не учитывается, но есть в dto модели
+                }
+            </remarks>
+            <param name="founderDto">Объект <c>FounderDto</c>, содержащий данные для обновления учредителя. Учитывается ссылочная целостность и валидация.</param>
+            <returns>Возвращает результат операции обновления, включая статус и сообщения об ошибках, если таковые имеются.</returns>
+        </member>
+        <member name="M:API.teledoc.Controllers.FoundersController.ReadByCondition(Domain.ModelsDTO.FounderDto)">
+            <summary>
+            Чтение учредителей по заданным условиям.
+            </summary>
+            <remarks>
+            Пример запроса:
+            
+                GET /Founders/ReadByCondition?inn=1234567890 // можно искать по любому уникальному полю(номер телефона, инн, почта)
+            </remarks>
+            <param name="dto">Объект <c>FounderDto</c> с условиями для поиска учредителей. Например, можно передать ИНН, почту или номер(любое униакальное поле) телефона для фильтрации результатов.</param>
+            <returns>Возвращает список учредителей, соответствующих заданным условиям, или сообщения об ошибках.</returns>
+        </member>
+        <member name="M:API.teledoc.Controllers.FoundersController.ReadAll">
+            <summary>
+            Чтение всех учредителей.
+            </summary>
+            <remarks>
+            Пример запроса:
+            
+                GET /Founders/ReadAll
+            </remarks>
+            <returns>Возвращает список всех учредителей или сообщения об ошибках.</returns>
+        </member>
+        <member name="M:API.teledoc.Controllers.FoundersController.Delete(Domain.ModelsDTO.FounderDto)">
+            <summary>
+            Удаление учредителя.
+            </summary>
+            <remarks>
+            Пример запроса:
+            
+                DELETE /Founders/Delete
+                {
+                    "inn": "1234567890"
+                }
+            </remarks>
+            <remarks>
+            Можно использовать любое уникальное поле (номер телефона, ИНН, почта) для идентификации учредителя.
+            </remarks>
+            <param name="founderDto">Объект <c>FounderDto</c>, содержащий данные для удаления учредителя. Включает уникальный идентификатор для нахождения записи.</param>
+            <returns>Возвращает результат операции удаления, включая статус и сообщения об ошибках, если таковые имеются.</returns>
+        </member>
+        <member name="M:API.teledoc.Controllers.FoundersController.DeleteAll">
+            <summary>
+            Удаление всех учредителей
+            </summary>
+            <remarks>
+            Пример запроса:
+            
+                DELETE /Founders/DeleteAll
+            
+            Метод удаляет все записи учредителей в базе данных.
+            </remarks>
+            <returns>Возвращает результат операции удаления всех учредителей, включая статус и сообщения об ошибках в случае неудачи.</returns>
+        </member>
+    </members>
+</doc>

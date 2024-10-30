@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\sasha\\Desktop\\AlmostReady\\teledoc\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{946237F3-0590-42D5-A035-979EEBB2674B}|Libraries\\Infrastructure.teledoc\\Infrastructure.teledoc.csproj|c:\\users\\sasha\\desktop\\almostready\\teledoc\\libraries\\infrastructure.teledoc\\infrastructure.teledoc.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{946237F3-0590-42D5-A035-979EEBB2674B}|Libraries\\Infrastructure.teledoc\\Infrastructure.teledoc.csproj|solutionrelative:libraries\\infrastructure.teledoc\\infrastructure.teledoc.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Infrastructure.teledoc.csproj",
+              "DocumentMoniker": "C:\\Users\\sasha\\Desktop\\AlmostReady\\teledoc\\Libraries\\Infrastructure.teledoc\\Infrastructure.teledoc.csproj",
+              "RelativeDocumentMoniker": "Libraries\\Infrastructure.teledoc\\Infrastructure.teledoc.csproj",
+              "ToolTip": "C:\\Users\\sasha\\Desktop\\AlmostReady\\teledoc\\Libraries\\Infrastructure.teledoc\\Infrastructure.teledoc.csproj",
+              "RelativeToolTip": "Libraries\\Infrastructure.teledoc\\Infrastructure.teledoc.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-10-29T12:42:31.882Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

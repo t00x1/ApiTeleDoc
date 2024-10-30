@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Domain.teledoc/1.0.0": {
+        "runtime": {
+          "Domain.teledoc.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Domain.teledoc/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

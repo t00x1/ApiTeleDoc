@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  api:
+    image: ${DOCKER_REGISTRY-}api
+    build:
+      context: .
+      dockerfile: ./dockerfile.teledocAPITS
+    environment:
+      - ASPNETCORE_URLS=http://+:8080
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionString=Server=db;Database=eledoc;User=sa;Password=1234567890A!z;MultipleActiveResultSets=true;TrustServerCertificate=True;;
+    ports:
+      - "5001:8080"
+    depends_on:
+      - db
+
+  db:
+    image: mcr.microsoft.com/mssql/server
+    environment:
+      - SA_PASSWORD=1234567890A!z
+      - ACCEPT_EULA=Y
+    container_name: mssql
+    ports:
+      - "1433:1433"

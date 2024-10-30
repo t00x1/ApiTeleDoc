@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\sasha\\Desktop\\rabota\\WebAPIForEffectiveMobileBySpektorAlexandr\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9391DAB0-1E07-4C89-BB27-A0434D4CE08B}|WebAPIForEffectiveMobileBySpektorAlexandr\\WebAPIForEffectiveMobileBySpektorAlexandr.csproj|c:\\users\\sasha\\desktop\\rabota\\webapiforeffectivemobilebyspektoralexandr\\webapiforeffectivemobilebyspektoralexandr\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9391DAB0-1E07-4C89-BB27-A0434D4CE08B}|WebAPIForEffectiveMobileBySpektorAlexandr\\WebAPIForEffectiveMobileBySpektorAlexandr.csproj|solutionrelative:webapiforeffectivemobilebyspektoralexandr\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\sasha\\Desktop\\rabota\\WebAPIForEffectiveMobileBySpektorAlexandr\\WebAPIForEffectiveMobileBySpektorAlexandr\\Program.cs",
+              "RelativeDocumentMoniker": "WebAPIForEffectiveMobileBySpektorAlexandr\\Program.cs",
+              "ToolTip": "C:\\Users\\sasha\\Desktop\\rabota\\WebAPIForEffectiveMobileBySpektorAlexandr\\WebAPIForEffectiveMobileBySpektorAlexandr\\Program.cs",
+              "RelativeToolTip": "WebAPIForEffectiveMobileBySpektorAlexandr\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T08:13:28.282Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
