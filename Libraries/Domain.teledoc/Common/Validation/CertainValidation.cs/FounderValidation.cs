@@ -5,9 +5,10 @@ using System.Linq;
 using Domain.Enums;
 using Domain.ModelsDTO;
 using Domain.Interfaces.Validation;
+using Domain.General.Validation;
 
 
-namespace Domain.Validation
+namespace Domain.Validation.CertainValidation
 {
     public class FounderValidation : GeneralValidation, IFounderValidation
     {

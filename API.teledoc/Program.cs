@@ -11,10 +11,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Вызов методов для добавления зависимостей
-builder.Services.AddSingletonDependencies();
-builder.Services.AddScopedDependencies();
-builder.Services.AddTransientDependencies();
+builder.Services.AddDependencies();
 
 builder.Services.AddSwaggerGen(options =>
 {

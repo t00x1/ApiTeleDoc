@@ -5,8 +5,8 @@ using System.Linq;
 using Domain.Enums;
 using Domain.ModelsDTO;
 using Domain.Interfaces.Validation;
-
-namespace Domain.Validation
+using Domain.General.Validation;
+namespace Domain.Validation.CertainValidation
 {
     public class ClientValidation : GeneralValidation, IClientValidation
     {

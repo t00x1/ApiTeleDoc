@@ -17,7 +17,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API.teledoc", "API.teledoc"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.teledoc", "API.teledoc\API.teledoc.csproj", "{CEDDCEC3-FBF4-41C7-81B9-86AC36D31AAE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Texts.teledoc", "Teledoc.Tests\Teledoc.Tests.csproj", "{NEW_GUID_HERE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests.teledoc", "Tests\Tests\Tests.csproj", "{NEW_GUID_HERE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestslIB.teledoc", "Tests\Library.Test\Library.Test.csproj", "{NEW_GUID_HERE}"
 EndProject
 
 
@@ -34,10 +36,10 @@ Global
 		{E0B4AE52-1B7C-41D7-B9D1-7E2F0ECF36DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E0B4AE52-1B7C-41D7-B9D1-7E2F0ECF36DA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2E6EE006-322B-437C-88E2-50E45BDBD920}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2E6EE006-322B-437C-88E2-50E45BDBD920}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2E6EE006-322B-437C-88E2-50E45BDBD920}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E6EE006-322B-437C-88E2-50E45BDBD920}.Debug|Any CPU.Build.0
 		{2E6EE006-322B-437C-88E2-50E45BDBD920}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9290E84A-B700-4248-A59A-D8AD22113E4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9290E84A-B700-4248-A59A-D8AD22113E4C}.Debug|Any CPU.ActiveCfg = = Debug|Any CPU
+		{2E6EE006-322B-437C-88E2-50E45BDBD920}.Release|Any CPU.ActiveCfg = Release|Any CPU Debug|Any CPU
 		{9290E84A-B700-4248-A59A-D8AD22113E4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9290E84A-B700-4248-A59A-D8AD22113E4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9290E84A-B700-4248-A59A-D8AD22113E4C}.Release|Any CPU.Build.0 = Release|Any CPU

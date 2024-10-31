@@ -1,18 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Domain.Response;
 using Domain.Models;
-using Domain.Interfaces;
 using Domain.Common;
 using Domain.ModelsDTO;
 using Microsoft.Extensions.Logging;
 using Domain.Interfaces.Services;
 using Domain.Interfaces.Wrapper;
-using Domain.Interfaces.Repository;
 using Domain.Interfaces.Validation;
-using Domain.Validation;
 using Domain.Interfaces.Common;
 using Domain.Interfaces.Response;
 
@@ -55,9 +48,6 @@ namespace Business.Services
             _logger.LogWarning("Update failed: {Message}", errorMessage);
             return new Response<ClientDto>().InvalidInput(errorMessage);
         }
-
-         
-
         public async Task<IResponse<ClientDto>> Update(ClientDto entity)
         {
             if (entity == null)
@@ -78,6 +68,7 @@ namespace Business.Services
             Client client = new Client();
             _autoMapper.CopyPropertiesTo<ClientDto, Client>(entity, client);
             client.DateUpdated = DateTime.UtcNow;
+               
             client.Type = (Domain.Enums.ClientType)(entity?.Type ?? -1);
             client.Status = (Domain.Enums.ClientStatus)(entity?.Status ?? -1);
 
@@ -89,7 +80,7 @@ namespace Business.Services
                 {
                     return CreateInvalidResponse("Update failed: No existing clients found.");
                 }
-                client.DateAdded = existingClients.FirstOrDefault()?.DateAdded ?? DateTime.MinValue;
+                client.DateAdded = existingClients.FirstOrDefault()?.DateAdded ?? throw new ArgumentNullException();
     
                 if (existingClients.Any(existingClient => 
                     (existingClient.Email == client.Email || existingClient.Phone == client.Phone) && 
@@ -108,7 +99,7 @@ namespace Business.Services
                 return new Response<ClientDto>().Error("Error while updating client.");
             }
 
-            return new Response<ClientDto>().Success(entity);
+            return new Response<ClientDto>().Success(entity ?? new ClientDto());
         }
     }
 }
