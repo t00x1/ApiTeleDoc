@@ -1,0 +1,12 @@
+C:\Users\sasha\Desktop\AlmostReady\teledoc\Tests\Library.Test\bin\Debug\net8.0\Library.Test.deps.json
+C:\Users\sasha\Desktop\AlmostReady\teledoc\Tests\Library.Test\bin\Debug\net8.0\Library.Test.dll
+C:\Users\sasha\Desktop\AlmostReady\teledoc\Tests\Library.Test\bin\Debug\net8.0\Library.Test.pdb
+C:\Users\sasha\Desktop\AlmostReady\teledoc\Tests\Library.Test\obj\Debug\net8.0\Library.Test.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sasha\Desktop\AlmostReady\teledoc\Tests\Library.Test\obj\Debug\net8.0\Library.Test.AssemblyInfoInputs.cache
+C:\Users\sasha\Desktop\AlmostReady\teledoc\Tests\Library.Test\obj\Debug\net8.0\Library.Test.AssemblyInfo.cs
+C:\Users\sasha\Desktop\AlmostReady\teledoc\Tests\Library.Test\obj\Debug\net8.0\Library.Test.csproj.CoreCompileInputs.cache
+C:\Users\sasha\Desktop\AlmostReady\teledoc\Tests\Library.Test\obj\Debug\net8.0\Library.Test.sourcelink.json
+C:\Users\sasha\Desktop\AlmostReady\teledoc\Tests\Library.Test\obj\Debug\net8.0\Library.Test.dll
+C:\Users\sasha\Desktop\AlmostReady\teledoc\Tests\Library.Test\obj\Debug\net8.0\refint\Library.Test.dll
+C:\Users\sasha\Desktop\AlmostReady\teledoc\Tests\Library.Test\obj\Debug\net8.0\Library.Test.pdb
+C:\Users\sasha\Desktop\AlmostReady\teledoc\Tests\Library.Test\obj\Debug\net8.0\ref\Library.Test.dll

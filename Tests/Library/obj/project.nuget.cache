@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "WIhI6ef7tdo=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\sasha\\Desktop\\AlmostReady\\teledoc\\Tests\\Library\\Library.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\sasha\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

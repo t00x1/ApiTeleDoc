@@ -1,8 +1,8 @@
-namespace TestLibrary.Utils
+namespace Library.Utils
 {
     public class Functions
     {
-        static string GenerateRandomNumber(int length)
+        public static string GenerateRandomNumber(int length)
         {
             Random random = new Random();
             char[] chars = new char[length];

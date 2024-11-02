@@ -24,7 +24,7 @@
     <!-- <ProjectReference Include="../../Libraries/DataAccess.teledoc/DataAccess.teledoc.csproj" /> -->
     <!-- <ProjectReference Include="../../Libraries/Infrastructure.teledoc/Infrastructure.teledoc.csproj" /> -->
     <!-- <ProjectReference Include="../../Libraries/Domain.teledoc/Domain.teledoc.csproj" /> -->
-    <ProjectReference Include="../Library.Test/Library.Test.csproj" />
+    <ProjectReference Include="../Library/Library.csproj"/>
   </ItemGroup>
 
 </Project>

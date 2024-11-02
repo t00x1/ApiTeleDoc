@@ -3,7 +3,7 @@ using Domain.Models;
 using Domain.Interfaces;
 using Domain.Common;
 using System;
-using System.Collections.Generic; // Не забудьте добавить этот using
+using System.Collections.Generic; 
 using Domain.ModelsDTO;
 using Microsoft.Extensions.Logging;
 using Domain.Interfaces.Services;
@@ -88,7 +88,7 @@ namespace Business.Services
                 return new Response<FounderDto>().NotFound(GetErrorMessage("Founders not found or not unique"));
             }
 
-            if (client.Type != ClientType.LegalEntity && founders.Any(X => X.ClientINN == founder.ClientINN))
+            if (client.Type != ClientType.LegalEntity && founders.Any(X => (X.ClientINN == founder.ClientINN) && X.INN != founder.INN))
             {
                 return new Response<FounderDto>().AlreadyExists(GetErrorMessage("Only LegalEntity can have few founders"));
             }

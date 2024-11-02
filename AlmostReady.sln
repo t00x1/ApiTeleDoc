@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.teledoc", "API.teledoc\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests.teledoc", "Tests\Tests\Tests.csproj", "{NEW_GUID_HERE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestslIB.teledoc", "Tests\Library.Test\Library.Test.csproj", "{NEW_GUID_HERE}"
+Project("{9A191032-16F7-4668-BE54-9A1E7A4F7556}") = "TestslIB.teledoc", "Tests\Library\Library.csproj", "{NEW_GUID_HERE}"
 EndProject
 
 

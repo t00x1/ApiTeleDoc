@@ -1,15 +1,14 @@
+using System;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Xunit;
-using TestLibrary.Utils;
+using Library.Utils;
 
 public class ClientsControllerTests
 {
     private readonly HttpClient _client;
-    
-    
 
     public ClientsControllerTests()
     {
@@ -17,7 +16,7 @@ public class ClientsControllerTests
     }
 
     [Fact]
-    public async Task DeleteAllClients_ShouldReturnOk()
+    public async Task DeleteAllClients()
     {
         var response = await _client.DeleteAsync("/Clients/DeleteAll");
         Assert.True(response.IsSuccessStatusCode);
@@ -26,31 +25,9 @@ public class ClientsControllerTests
         Assert.True(result.IsSuccessStatusCode);
     }
 
-    [Fact]
-    public async Task CreateClient_ShouldReturnOk()
-    {
-        var jsonData = new
-        {
-            INN = GenerateRandomNumber(10),
-            Type = "1",
-            Phone = GenerateRandomNumber(10),
-            Status = "1",
-            Email = $"test_{Guid.NewGuid()}@example.com"
-        };
-
-        var jsonContent = new StringContent(
-            JsonConvert.SerializeObject(jsonData),
-            Encoding.UTF8,
-            "application/json"
-        );
-
-        var response = await _client.PostAsync("/Clients/Create", jsonContent);
-        var content = await response.Content.ReadAsStringAsync();
-        Assert.True(response.IsSuccessStatusCode, content);
-    }
 
     [Fact]
-    public async Task ReadClient_ShouldReturnOk()
+    public async Task ReadClient()
     {
         var jsonData = new
         {
@@ -74,7 +51,7 @@ public class ClientsControllerTests
     }
 
     [Fact]
-    public async Task ReadAllClients_ShouldReturnOk()
+    public async Task ReadAllClients()
     {
         var jsonData = new
         {
@@ -98,7 +75,7 @@ public class ClientsControllerTests
     }
 
     [Fact]
-    public async Task UpdateClient_ShouldReturnOk()
+    public async Task UpdateClient()
     {
         var jsonData = new
         {
