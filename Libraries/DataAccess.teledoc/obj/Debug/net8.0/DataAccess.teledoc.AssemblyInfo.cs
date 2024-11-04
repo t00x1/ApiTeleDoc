@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DataAccess.teledoc")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3edee5a949c246dde7824a64c6734f66f4fcb46c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+41a093ce944d87f630044ff04b7f367a3c041e3a")]
 [assembly: System.Reflection.AssemblyProductAttribute("DataAccess.teledoc")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DataAccess.teledoc")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
