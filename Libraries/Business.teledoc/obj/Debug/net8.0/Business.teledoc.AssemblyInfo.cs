@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Business.teledoc")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f5e910bf9a3b3acdc23efd6986cf5c4f79913b68")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3edee5a949c246dde7824a64c6734f66f4fcb46c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Business.teledoc")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Business.teledoc")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

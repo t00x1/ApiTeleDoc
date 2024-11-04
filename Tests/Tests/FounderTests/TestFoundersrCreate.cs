@@ -5,14 +5,15 @@ using Newtonsoft.Json;
 using Xunit;
 using Library.Utils;
 using Library.Requsets;
-
+using Global;
+using Domain.ModelsDTO;
 public class TestFoundersrCreate
 {
     private readonly HttpClient _client;
 
     public TestFoundersrCreate()
     {
-        _client = new HttpClient { BaseAddress = new Uri("http://localhost:5110") };
+        _client = new HttpClient { BaseAddress = GlobalVariables.URL };
     }
 
     [Fact]
@@ -20,7 +21,7 @@ public class TestFoundersrCreate
     {
         string _createdClientINN = await CreateClientRequest.CreateClientAndGetINN();
 
-        var founderJsonData = new
+        FounderDto founderJsonData = new FounderDto()
         {
             INN = Functions.GenerateRandomNumber(10),
             Phone = Functions.GenerateRandomNumber(10),
@@ -31,13 +32,9 @@ public class TestFoundersrCreate
             ClientINN = _createdClientINN
         };
 
-        var jsonContent = new StringContent(
-            JsonConvert.SerializeObject(founderJsonData),
-            Encoding.UTF8,
-            "application/json"
-        );
+        
 
-        var response = await _client.PostAsync("/Founders/Create", jsonContent);
+        var response = await _client.PostAsync("/Founders/Create", JsonProcessing.ToStringJsonForBody<FounderDto>(founderJsonData));
         var content = await response.Content.ReadAsStringAsync();
 
         Assert.True(response.IsSuccessStatusCode, content);
@@ -46,49 +43,43 @@ public class TestFoundersrCreate
     [Fact]
     public async Task CreateWithSameINN()
     {
-        string INNOfUser = Functions.GenerateRandomNumber(10);
-        var initialClientJson = new
+        string INNOfClient =  await CreateClientRequest.CreateClientAndGetINN();
+         FounderDto firstFounderJsonData = new FounderDto()
         {
-            INN = INNOfUser,
-            Type = "1",
+            INN = "1234567890",
             Phone = Functions.GenerateRandomNumber(10),
-            Status = "1",
-            Email = $"client_{Guid.NewGuid()}@example.com"
+            LastName = "Alexandr",
+            FirstName = "Spektor",
+            Patronymic = "",
+            Email = $"founder_{Guid.NewGuid()}@example.com",
+            ClientINN = INNOfClient
         };
 
-        var initialClientContent = new StringContent(
-            JsonConvert.SerializeObject(initialClientJson),
-            Encoding.UTF8,
-            "application/json"
-        );
+       
+
+        var initialResponse = await _client.PostAsync("/Founders/Create", JsonProcessing.ToStringJsonForBody<FounderDto>(firstFounderJsonData));
+        var content = await initialResponse.Content.ReadAsStringAsync();
 
 
-        var initialResponse = await _client.PostAsync("/Clients/Create", initialClientContent);
-        initialResponse.EnsureSuccessStatusCode(); 
-
-
-        var clientINN = await CreateClientRequest.CreateClientAndGetINN();
+     
 
     
-        var jsonData = new
+        FounderDto secondFounderJsonData = new FounderDto()
+
         {
-            INN = clientINN,
-            Type = "1",
+            INN = "1234567890",
             Phone = Functions.GenerateRandomNumber(10),
-            Status = "1",
-            Email = $"client_{Guid.NewGuid()}@example.com",
-            ClientINN = clientINN
+            LastName = "Alexandr",
+            FirstName = "Spektor",
+            Patronymic = "",
+            Email = $"founder_{Guid.NewGuid()}@example.com",
+            ClientINN = INNOfClient
         };
 
-        var jsonContent = new StringContent(
-            JsonConvert.SerializeObject(jsonData),
-            Encoding.UTF8,
-            "application/json"
-        );
-
+        
     
-        var response = await _client.PostAsync("/Clients/Create", jsonContent);
-        var content = await response.Content.ReadAsStringAsync();
+        var response = await _client.PostAsync("/Founders/Create", JsonProcessing.ToStringJsonForBody<FounderDto>(secondFounderJsonData));
+        content = await response.Content.ReadAsStringAsync();
 
 
         Assert.False(response.IsSuccessStatusCode, content);
@@ -101,7 +92,7 @@ public class TestFoundersrCreate
     {
         string _createdClientINN = await CreateClientRequest.CreateClientAndGetINN("1");
 
-        var firstFounderJsonData = new
+        FounderDto firstFounderJsonData = new FounderDto()
         {
             INN = Functions.GenerateRandomNumber(10),
             Phone = Functions.GenerateRandomNumber(10),
@@ -112,18 +103,14 @@ public class TestFoundersrCreate
             ClientINN = _createdClientINN
         };
 
-        var firstJsonContent = new StringContent(
-            JsonConvert.SerializeObject(firstFounderJsonData),
-            Encoding.UTF8,
-            "application/json"
-        );
+        
 
-        var firstResponse = await _client.PostAsync("/Founders/Create", firstJsonContent);
+        var firstResponse = await _client.PostAsync("/Founders/Create", JsonProcessing.ToStringJsonForBody<FounderDto>(firstFounderJsonData));
         var firstContent = await firstResponse.Content.ReadAsStringAsync();
 
         Assert.True(firstResponse.IsSuccessStatusCode, firstContent);
 
-        var secondFounderJsonData = new
+        FounderDto secondFounderJsonData = new FounderDto()
         {
             INN = Functions.GenerateRandomNumber(10),
             Phone = Functions.GenerateRandomNumber(10),
@@ -134,13 +121,9 @@ public class TestFoundersrCreate
             ClientINN = _createdClientINN
         };
 
-        var secondJsonContent = new StringContent(
-            JsonConvert.SerializeObject(secondFounderJsonData),
-            Encoding.UTF8,
-            "application/json"
-        );
+       
 
-        var secondResponse = await _client.PostAsync("/Founders/Create", secondJsonContent);
+        var secondResponse = await _client.PostAsync("/Founders/Create", JsonProcessing.ToStringJsonForBody<FounderDto>(secondFounderJsonData));
         var secondContent = await secondResponse.Content.ReadAsStringAsync();
 
         Assert.False(secondResponse.IsSuccessStatusCode, secondContent);

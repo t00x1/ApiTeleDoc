@@ -1,14 +1,14 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 using Xunit;
-
+using Global;
 public class TestFounderDelete
 {
     private readonly HttpClient _client;
 
     public TestFounderDelete()
     {
-        _client = new HttpClient { BaseAddress = new Uri("http://localhost:5110") };
+        _client = new HttpClient { BaseAddress = GlobalVariables.URL };
     }
 
     [Fact]

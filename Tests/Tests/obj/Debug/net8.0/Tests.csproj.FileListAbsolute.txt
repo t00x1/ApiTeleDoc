@@ -101,3 +101,5 @@ C:\Users\sasha\Desktop\AlmostReady\teledoc\Tests\Tests\obj\Debug\net8.0\refint\T
 C:\Users\sasha\Desktop\AlmostReady\teledoc\Tests\Tests\obj\Debug\net8.0\Tests.pdb
 C:\Users\sasha\Desktop\AlmostReady\teledoc\Tests\Tests\obj\Debug\net8.0\Tests.genruntimeconfig.cache
 C:\Users\sasha\Desktop\AlmostReady\teledoc\Tests\Tests\obj\Debug\net8.0\ref\Tests.dll
+C:\Users\sasha\Desktop\AlmostReady\teledoc\Tests\Tests\bin\Debug\net8.0\Domain.teledoc.dll
+C:\Users\sasha\Desktop\AlmostReady\teledoc\Tests\Tests\bin\Debug\net8.0\Domain.teledoc.pdb

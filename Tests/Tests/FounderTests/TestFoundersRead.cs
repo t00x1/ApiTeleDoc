@@ -5,6 +5,7 @@ using Xunit;
 using Library.Utils;
 using Newtonsoft.Json;
 using Library.Requsets;
+using Global;
 
 public class TestFoundersRead
 {
@@ -12,7 +13,7 @@ public class TestFoundersRead
 
     public TestFoundersRead()
     {
-        _client = new HttpClient { BaseAddress = new Uri("http://localhost:5110") };
+        _client = new HttpClient { BaseAddress = GlobalVariables.URL };
     }
 
     [Fact]

@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 using Xunit;
 using Library.Utils;
 using Library.Requsets;
+using Global;
 public class TestFoundersInvalidData
 {
     private readonly HttpClient _client;
@@ -14,7 +15,7 @@ public class TestFoundersInvalidData
 
     public TestFoundersInvalidData()
     {
-        _client = new HttpClient { BaseAddress = new Uri("http://localhost:5110") };
+        _client = new HttpClient { BaseAddress = GlobalVariables.URL };
     }
 
     

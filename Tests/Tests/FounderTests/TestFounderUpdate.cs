@@ -5,6 +5,8 @@ using Newtonsoft.Json;
 using Xunit;
 using Library.Utils;
 using Library.Requsets;
+using Global;
+using Domain.ModelsDTO;
 
 public class TestFounderUpdate
 {
@@ -12,14 +14,14 @@ public class TestFounderUpdate
 
     public TestFounderUpdate()
     {
-        _client = new HttpClient { BaseAddress = new Uri("http://localhost:5110") };
+         _client = new HttpClient { BaseAddress = GlobalVariables.URL };
     }
 
     [Fact]
     public async Task UpdateFounder_ShouldReturnOK()
     {
         string createdClientINN = await CreateClientRequest.CreateClientAndGetINN("1");
-        var firstFounderJsonData = new
+        FounderDto firstFounderJsonData = new FounderDto()
         {
             INN = Functions.GenerateRandomNumber(10),
             Phone = Functions.GenerateRandomNumber(10),
@@ -30,17 +32,13 @@ public class TestFounderUpdate
             ClientINN = createdClientINN
         };
 
-        var firstJsonContent = new StringContent(
-            JsonConvert.SerializeObject(firstFounderJsonData),
-            Encoding.UTF8,
-            "application/json"
-        );
-        var firstResponse = await _client.PostAsync("/Founders/Create", firstJsonContent);
+       
+        var firstResponse = await _client.PostAsync("/Founders/Create", JsonProcessing.ToStringJsonForBody<FounderDto>(firstFounderJsonData));
         var firstContent = await firstResponse.Content.ReadAsStringAsync();
 
         Assert.True(firstResponse.IsSuccessStatusCode, firstContent);
 
-        var updatedJsonData = new
+        FounderDto updatedJsonData = new FounderDto()
         {
             INN = firstFounderJsonData.INN,
             Phone = "9234567890",
@@ -51,13 +49,8 @@ public class TestFounderUpdate
             ClientINN = createdClientINN
         };
 
-        var updatedJsonContent = new StringContent(
-            JsonConvert.SerializeObject(updatedJsonData),
-            Encoding.UTF8,
-            "application/json"
-        );
-
-        var response = await _client.PutAsync("/Founders/Update", updatedJsonContent);
+        
+        var response = await _client.PutAsync("/Founders/Update", JsonProcessing.ToStringJsonForBody<FounderDto>(updatedJsonData));
         var content = await response.Content.ReadAsStringAsync();
 
         Assert.True(response.IsSuccessStatusCode, content);
@@ -66,7 +59,7 @@ public class TestFounderUpdate
     [Fact]
     public async Task UpdateFounder_ButNotExistClient()
     {
-        var updatedJsonData = new
+        FounderDto updatedJsonData = new FounderDto()
         {
             INN = "1111111111",
             Phone = "9234567890",
@@ -77,13 +70,9 @@ public class TestFounderUpdate
             ClientINN = "21312312313123131312312"
         };
 
-        var updatedJsonContent = new StringContent(
-            JsonConvert.SerializeObject(updatedJsonData),
-            Encoding.UTF8,
-            "application/json"
-        );
+    
 
-        var response = await _client.PutAsync("/Founders/Update", updatedJsonContent);
+        var response = await _client.PutAsync("/Founders/Update", JsonProcessing.ToStringJsonForBody<FounderDto>(updatedJsonData));
         var content = await response.Content.ReadAsStringAsync();
 
         Assert.False(response.IsSuccessStatusCode, content);
@@ -93,7 +82,7 @@ public class TestFounderUpdate
     {
 
         string createdClientINN = await CreateClientRequest.CreateClientAndGetINN("1");
-        var firstFounderJsonData = new
+        FounderDto firstFounderJsonData = new FounderDto()
         {
             INN = Functions.GenerateRandomNumber(10),
             Phone = Functions.GenerateRandomNumber(10),
@@ -104,12 +93,8 @@ public class TestFounderUpdate
             ClientINN = createdClientINN
         };
 
-        var firstJsonContent = new StringContent(
-            JsonConvert.SerializeObject(firstFounderJsonData),
-            Encoding.UTF8,
-            "application/json"
-        );
-        var firstResponse = await _client.PostAsync("/Founders/Create", firstJsonContent);
+    
+        var firstResponse = await _client.PostAsync("/Founders/Create", JsonProcessing.ToStringJsonForBody<FounderDto>(firstFounderJsonData));
         var firstContent = await firstResponse.Content.ReadAsStringAsync();
 
         Assert.True(firstResponse.IsSuccessStatusCode, firstContent);
@@ -119,7 +104,7 @@ public class TestFounderUpdate
        
         
          
-        var secondFounderJsonData = new
+        FounderDto secondFounderJsonData = new FounderDto()
         {
             INN = Functions.GenerateRandomNumber(10),
             Phone = Functions.GenerateRandomNumber(10),
@@ -130,19 +115,15 @@ public class TestFounderUpdate
             ClientINN = await CreateClientRequest.CreateClientAndGetINN("0")
         };
 
-        var secondJsonContent = new StringContent(
-            JsonConvert.SerializeObject(secondFounderJsonData),
-            Encoding.UTF8,
-            "application/json"
-        );
+        
 
  
-        var secondResponse = await _client.PostAsync("/Founders/Create", secondJsonContent);
+        var secondResponse = await _client.PostAsync("/Founders/Create", JsonProcessing.ToStringJsonForBody<FounderDto>(secondFounderJsonData));
         var secondContent = await secondResponse.Content.ReadAsStringAsync();
 
         Assert.True(secondResponse.IsSuccessStatusCode, secondContent);
 
-        var updatedSecondFounderJsonData = new
+        FounderDto updatedSecondFounderJsonData = new FounderDto()
         {
             INN = secondFounderJsonData.INN,
             Phone = secondFounderJsonData.Phone,
@@ -153,13 +134,8 @@ public class TestFounderUpdate
             ClientINN = createdClientINN
         };
 
-        var updatedFirstJsonContent = new StringContent(
-            JsonConvert.SerializeObject(updatedSecondFounderJsonData),
-            Encoding.UTF8,
-            "application/json"
-        );
-
-        var updateFirstResponse = await _client.PutAsync("/Founders/Update", updatedFirstJsonContent);
+       
+        var updateFirstResponse = await _client.PutAsync("/Founders/Update", JsonProcessing.ToStringJsonForBody<FounderDto>(updatedSecondFounderJsonData));
         var updateFirstContent = await updateFirstResponse.Content.ReadAsStringAsync();
 
         Assert.False(updateFirstResponse.IsSuccessStatusCode, updateFirstContent);
